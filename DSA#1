@@ -1,1 +1,109 @@
-ali
+
+QON:#2: How to run the program ?
+ANS:
+1. Open a terminal or command prompt:
+    - Windows: Press Win + R, type cmd, and press Enter.
+    - macOS/Linux: Use Spotlight or your distribution's terminal emulator.
+2. Navigate to the program directory:
+    - Use the cd command to change directories. For example: cd path/to/program
+3. Compile the program (if necessary):
+    - If your program requires compilation, use the relevant compiler command (e.g., gcc, javac, python).
+4. Run the program:
+    - Type the command to run the program, usually ./program_name or python program_name.py.
+
+For GUI Programs
+
+1. Double-click the executable file:
+    - Find the program's executable file (e.g., .exe, .app, .jar) and double-click it.
+2. Run from an IDE (Integrated Development Environment):
+    - If you're using an IDE like Eclipse, Visual Studio, or IntelliJ, create a new project, import the program code, and click the "Run" button.
+
+For Web-Based Programs
+
+QON:#3 The purpose of the code ?
+ANS:
+1. Open a web browser:
+    - Choose your preferred web browser (e.g., Google Chrome, Mozilla Firefox).
+2. Navigate to the program URL:
+    - Type the program's URL in the address bar and press Enter.
+1. Automation: Automate repetitive tasks, workflows, or processes.
+2. Problem-solving: Solve mathematical, computational, or logical problems.
+3. Data analysis: Analyze, visualize, or process data for insights or decision-making.
+4. Web development: Create web applications, websites, or APIs.
+5. Game development: Create games for PCs, consoles, or mobile devices.
+6. Artificial intelligence: Implement AI, machine learning, or deep learning models.
+7. Network security: Enhance network security, detect threats, or prevent attacks.
+8. Database management: Manage, query, or optimize databases.
+9. Scientific simulations: Simulate complex scientific phenomena or experiments.
+10. Education: Teach programming concepts, data structures, or algorithms
+
+
+If you're still unsure, please provide more context about the program you're trying to run, such as:
+
+- Proramming language
+- Operating system
+- Program type (command-line, GUI, web-based)
+
+QON:4:The time complexity, also tell the worst case of the binary search O(n), and print that numbers ?
+/////////
+ANS:
+Time Complexity of Binary Search:
+
+The time complexity of binary search is O(log n), where n is the number of elements in the sorted array. This is because binary search divides the search space in half at each step, reducing the number of comparisons needed to find the target element.
+
+Worst-Case Scenario:
+
+The worst-case scenario for binary search occurs when the target element is not present in the array, and the algorithm has to search the entire array. Even in this case, the time complexity remains O(log n), because the algorithm still divides the search space in half at each step.
+
+Printing Numbers:
+
+To demonstrate the binary search algorithm, let's consider an example array:
+
+arr = [2, 5, 8, 12, 16, 23, 38, 56, 72, 91]
+
+Suppose we want to search for the number 23. Here's how the binary search algorithm would work:
+
+1. Start with the middle element: arr[4] = 16
+2. Compare 23 with 16: 23 is greater, so move to the right half.
+3. New middle element: arr[6] = 38
+4. Compare 23 with 38: 23 is smaller, so move to the left half.
+5. New middle element: arr[5] = 23
+6. Compare 23 with 23: match found!
+
+Here's some sample Python code to demonstrate the binary search algorithm:
+
+
+def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+        print(f"Mid index: {mid}, Mid value: {arr[mid]}")
+
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+
+    return -1  # Target not found
+
+arr = [2, 5, 8, 12, 16, 23, 38, 56, 72, 91]
+target = 23
+result = binary_search(arr, target)
+
+if result != -1:
+    print(f"Target {target} found at index {result}.")
+else:
+    print(f"Target {target} not found in the array.")
+
+
+When you run this code, it will print the mid index and mid value at each step of the binary search algorithm. The output will look something like this:
+
+
+Mid index: 4, Mid value: 16
+Mid index: 6, Mid value: 38
+Mid index: 5, Mid value: 23
+Target 23 found at index 5.
